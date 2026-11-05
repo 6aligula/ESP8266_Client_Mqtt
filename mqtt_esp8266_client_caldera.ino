@@ -1,10 +1,11 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
+#include "secrets.h" // Credenciales WiFi (no se sube a git, ver secrets.example.h)
 
 //Información de nuestro WIFI
-const char* ssid = "ssid";
-const char* password = "password";
-const char* mqtt_server = "ip";
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
+const char* mqtt_server = "192.168.1.243"; // Raspberry Pi (broker MQTT)
 
 WiFiClient espClient;//Creamos un objeto de la clase cliente wifi
 PubSubClient client(espClient);//
